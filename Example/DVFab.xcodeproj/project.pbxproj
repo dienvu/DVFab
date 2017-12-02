@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5BC9B2C779575F074CAE6355 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		5BC9B2C779575F074CAE6355 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* DVFab_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVFab_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +43,9 @@
 		9ED9EA893FF9CAF81007C03D /* Pods-DVFab_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVFab_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DVFab_Example/Pods-DVFab_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AA89E545F6A4F8EE32A33FFA /* Pods-DVFab_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVFab_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DVFab_Tests/Pods-DVFab_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B27D4E871690A74492A9C647 /* Pods-DVFab_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVFab_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DVFab_Tests/Pods-DVFab_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B3D57A7A57AB8F119FBB84CD /* DVFab.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = DVFab.podspec; path = ../DVFab.podspec; sourceTree = "<group>"; };
+		B3D57A7A57AB8F119FBB84CD /* DVFab.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DVFab.podspec; path = ../DVFab.podspec; sourceTree = "<group>"; };
 		C29832814B13A569AA14A2AA /* Pods-DVFab_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVFab_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DVFab_Example/Pods-DVFab_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CA5BE3F22B721922E4894364 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CA5BE3F22B721922E4894364 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E691DE344A7169B77B0F0780 /* Pods_DVFab_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVFab_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -215,10 +215,13 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = Z6EU2XHSG4;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = Z6EU2XHSG4;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -526,11 +529,16 @@
 			baseConfigurationReference = C29832814B13A569AA14A2AA /* Pods-DVFab_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6EU2XHSG4;
 				INFOPLIST_FILE = DVFab/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.demo.DVFab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -541,11 +549,16 @@
 			baseConfigurationReference = 9ED9EA893FF9CAF81007C03D /* Pods-DVFab_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6EU2XHSG4;
 				INFOPLIST_FILE = DVFab/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.demo.DVFab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -555,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B27D4E871690A74492A9C647 /* Pods-DVFab_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = Z6EU2XHSG4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -576,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA89E545F6A4F8EE32A33FFA /* Pods-DVFab_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = Z6EU2XHSG4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

@@ -1,0 +1,6 @@
+framework module Pods_DVFab_Example {
+  umbrella header "Pods-DVFab_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

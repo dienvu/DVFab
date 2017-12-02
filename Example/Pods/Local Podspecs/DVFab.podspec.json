@@ -1,0 +1,22 @@
+{
+  "name": "DVFab",
+  "version": "0.1.0",
+  "summary": "A short description of DVFab.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/dien.vu@outlook.com/DVFab",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "dien.vu@outlook.com": "dien.vu@outlook.com"
+  },
+  "source": {
+    "git": "https://github.com/dien.vu@outlook.com/DVFab.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "DVFab/Classes/**/*"
+}

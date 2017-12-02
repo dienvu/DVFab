@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'DVFab'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of DVFab.'
+  s.summary          = 'A Floating Button.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Floating Button for Swift upgraded from Mariolannotta.
                        DESC
 
-  s.homepage         = 'https://github.com/dien.vu@outlook.com/DVFab'
+  s.homepage         = 'https://github.com/dienvu/DVFab.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'dien.vu@outlook.com' => 'dien.vu@outlook.com' }
-  s.source           = { :git => 'https://github.com/dien.vu@outlook.com/DVFab.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/dienvu/DVFab.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
