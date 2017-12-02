@@ -34,8 +34,16 @@ public struct MIFabOption {
     
 }
 
+
 public class MIFab {
-    
+
+    /*public struct Constraint {
+        public var VisualFormat : String? = nil
+        public var Options : NSLayoutFormatOptions = []
+        public var Metrics : [String : NSNumber]? = nil
+        public var Views : [String : UIView?]?
+    }*/
+
     public struct Config {
         
         public var width: CGFloat = 230
@@ -46,9 +54,9 @@ public class MIFab {
         public var buttonSize: CGFloat = 75
         public var buttonIconPadding : CGFloat = 13
         
-        public var buttonConstraints : [String]?
-        public var buttonConstraintTo : UIView?
-        public var buttonConstraintViews : [String: UIView?]? //Dictionary<String, UIView?>()
+        public var buttonConstraints : [String: NSLayoutFormatOptions]? = nil
+        public var buttonConstraintTo : UIView? = nil
+        public var buttonConstraintViews : [String: UIView?]? = nil //Dictionary<String, UIView?>()
         
         public var buttonImage: UIImage?
         public var buttonBackgroundColor = UIColor.orange
@@ -200,8 +208,7 @@ public class MIFab {
         
         fabButton.alpha = 0
         
-        //fabButton.button.setImage(config.buttonImage, for: UIControlState())
-        fabButton.button.setImage(UIImage(named:"homeGaragsUnselect.png"), for: UIControlState())
+        fabButton.button.setImage(config.buttonImage, for: UIControlState())
         
         fabButton.button.backgroundColor = config.buttonBackgroundColor
         fabButton.button.tintColor = config.buttonTintColor
@@ -221,19 +228,31 @@ public class MIFab {
         
         /*NSLayoutConstraint.activate([
             NSLayoutConstraint(item: fabButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: config.buttonSize),
-            NSLayoutConstraint(item: fabButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: config.buttonSize)
+            NSLayoutConstraint(item: fabButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: config.buttonSize),
+            
+            NSLayoutConstraint(item: fabButtonSuperView, attribute: .bottom, relatedBy: .equal, toItem: fabButton, attribute: .bottom, multiplier: 1, constant: config.buttonPadding.height),
+            NSLayoutConstraint(item: fabButtonSuperView, attribute: .trailing, relatedBy: .equal, toItem: fabButton, attribute: .trailing, multiplier: 1, constant: config.buttonPadding.width)
             ])*/
-        
-        if config.buttonConstraints != nil && config.buttonConstraintViews != nil {
+        /*NSLayoutConstraint.activate([ // Use Constraint Default
+            fabButton.widthAnchor.constraint(equalToConstant: config.buttonSize),
+            fabButton.heightAnchor.constraint(equalToConstant: config.buttonSize),
+            
+            fabButton.bottomAnchor.constraint(equalTo: fabButtonSuperView.bottomAnchor, constant: -config.buttonPadding.height),
+            fabButton.trailingAnchor.constraint(equalTo: fabButtonSuperView.trailingAnchor, constant: -config.buttonPadding.width)
+        ])*/
+        if config.buttonConstraints != nil {
             // Use Constraint from outside setup in Config
             
-            config.buttonConstraintViews!["fab"] = fabButton // no fab create new fab
+            if config.buttonConstraintViews == nil { config.buttonConstraintViews = ["fab": fabButton] }
+            else {
+                config.buttonConstraintViews!["fab"] = fabButton // no fab create new fab
+            }
             
             var constraints = [NSLayoutConstraint]()
-            for formula in config.buttonConstraints! {
+            for form_option in config.buttonConstraints! {
                 // https://developer.apple.com/documentation/uikit/nslayoutconstraint/1526944-constraints
-                print(formula)
-                constraints += NSLayoutConstraint.constraints(withVisualFormat: formula, options: [], metrics: nil, views: config.buttonConstraintViews!)
+                //print(formula)
+                constraints += NSLayoutConstraint.constraints(withVisualFormat: form_option.key, options: form_option.value, metrics: nil, views: config.buttonConstraintViews!)
             }
             NSLayoutConstraint.activate(constraints)
             
@@ -242,11 +261,9 @@ public class MIFab {
             NSLayoutConstraint.activate([ // Use Constraint Default
                 fabButton.widthAnchor.constraint(equalToConstant: config.buttonSize),
                 fabButton.heightAnchor.constraint(equalToConstant: config.buttonSize),
-                fabButton.bottomAnchor.constraint(equalTo: fabButtonSuperView.bottomAnchor, constant: config.buttonPadding.height),
-                fabButton.trailingAnchor.constraint(equalTo: fabButtonSuperView.trailingAnchor, constant: config.buttonPadding.width)
-                /*NSLayoutConstraint(item: fabButtonSuperView, attribute: .bottom, relatedBy: .equal, toItem: fabButton, attribute: .bottom, multiplier: 1, constant: config.buttonPadding.height),
-                 NSLayoutConstraint(item: fabButtonSuperView, attribute: .trailing, relatedBy: .equal, toItem: fabButton, attribute: .trailing, multiplier: 1, constant: config.buttonPadding.width)*/
-                ])
+                fabButton.bottomAnchor.constraint(equalTo: fabButtonSuperView.bottomAnchor, constant:-config.buttonPadding.height),
+                fabButton.trailingAnchor.constraint(equalTo: fabButtonSuperView.trailingAnchor, constant: -config.buttonPadding.width)
+            ])
         }
     }
     
