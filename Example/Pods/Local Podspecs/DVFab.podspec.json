@@ -1,9 +1,9 @@
 {
   "name": "DVFab",
   "version": "0.1.0",
-  "summary": "A short description of DVFab.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/dien.vu@outlook.com/DVFab",
+  "summary": "A Floating Button.",
+  "description": "Floating Button for Swift upgraded from Mariolannotta.",
+  "homepage": "https://github.com/dienvu/DVFab.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "dien.vu@outlook.com": "dien.vu@outlook.com"
   },
   "source": {
-    "git": "https://github.com/dien.vu@outlook.com/DVFab.git",
+    "git": "https://github.com/dienvu/DVFab.git",
     "tag": "0.1.0"
   },
   "platforms": {

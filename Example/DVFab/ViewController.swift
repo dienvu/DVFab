@@ -8,8 +8,14 @@
 
 import UIKit
 
+// Dien : MIFab (1)
+import DVFab
+
 class ViewController: UIViewController {
 
+    // Dien : MIFab (2)
+    // fileprivate var fab: MIFab!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
