@@ -262,7 +262,7 @@ public class MIFab {
                 fabButton.widthAnchor.constraint(equalToConstant: config.buttonSize),
                 fabButton.heightAnchor.constraint(equalToConstant: config.buttonSize),
                 fabButton.bottomAnchor.constraint(equalTo: fabButtonSuperView.bottomAnchor, constant:-config.buttonPadding.height),
-                fabButton.trailingAnchor.constraint(equalTo: fabButtonSuperView.trailingAnchor, constant: -config.buttonPadding.width)
+                fabButton.trailingAnchor.constraint(equalTo: fabButtonSuperView.trailingAnchor, constant:-config.buttonPadding.width)
             ])
         }
     }
