@@ -10,7 +10,7 @@ import UIKit
 
 public struct MIFabOption {
     
-    public typealias MIFabOption = (Void) -> Void
+    public typealias MIFabOption = () -> Void
     
     public var title: String?
     public var image: UIImage?
@@ -56,7 +56,7 @@ public class MIFab {
         
         public var buttonConstraints : [String: NSLayoutFormatOptions]? = nil
         public var buttonConstraintTo : UIView? = nil
-        public var buttonConstraintViews : [String: UIView?]? = nil //Dictionary<String, UIView?>()
+        public var buttonConstraintViews : [String: Any]? = nil //Dictionary<String, UIView?>()
         
         public var buttonImage: UIImage?
         public var buttonBackgroundColor = UIColor.orange
