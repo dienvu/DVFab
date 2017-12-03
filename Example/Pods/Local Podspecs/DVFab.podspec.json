@@ -1,6 +1,6 @@
 {
   "name": "DVFab",
-  "version": "0.1.0",
+  "version": "1.0",
   "summary": "A Floating Button.",
   "description": "Floating Button for Swift upgraded from Mariolannotta.",
   "homepage": "https://github.com/dienvu/DVFab.git",
@@ -13,10 +13,13 @@
   },
   "source": {
     "git": "https://github.com/dienvu/DVFab.git",
-    "tag": "0.1.0"
+    "tag": "1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "source_files": "DVFab/Classes/**/*"
+  "source_files": "DVFab/Classes/**/*",
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "3.0"
+  }
 }
