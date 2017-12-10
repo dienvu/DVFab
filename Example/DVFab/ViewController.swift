@@ -12,7 +12,8 @@ import UIKit
 import DVFab
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var btnGPS: UIButton!
+    
     // Dien : MIFab (2)
     fileprivate var fab: MIFab!
     @IBOutlet weak var btnCar: UIButton!
@@ -29,18 +30,17 @@ class ViewController: UIViewController {
     fileprivate func setupFab() {
         var fabConfig = MIFab.Config() // Config for Fab & Sub-Item
         
-        /*fabConfig.buttonPadding = CGSize(width: 10, height: 10)
-        fabConfig.buttonSize = btnCar.frame.size.width
-        fabConfig.buttonIconPadding = 0*/
+        fabConfig.buttonPadding = CGSize(width: 200, height: 50)
+        //fabConfig.buttonSize = btnCar.frame.size.width
+        fabConfig.buttonIconPadding = 0
         
-        //fabConfig.buttonConstraints = ["H:[btnCar]-[fab(==btnCar)]", "V:[fab(==btnCar)]"]
-        //fabConfig.buttonConstraintViews = ["btnCar": btnCar]
-        fabConfig.buttonConstraints = ["V:[btnCar]-[fab(==btnCar)]": [], "H:[btnCar][fab(==btnCar)]": .alignAllCenterY]
-        fabConfig.buttonConstraintViews = ["btnCar": btnCar]
+        //fabConfig.buttonConstraints = ["V:[fab(==btnGPS)]": [], "H:[btnGPS]-(>=0)-[fab(==btnGPS)]-10-|": .alignAllCenterY]
+        //fabConfig.buttonConstraints = ["V:[fab(==55)]-200-|": [], "H:[fab(==btnGPS)]-100-|": []]
+        //fabConfig.buttonConstraintViews = ["btnGPS": btnGPS]
         
         //fabConfig.buttonConstraintTo = btnCar
         
-        fabConfig.buttonImage = UIImage(named: "sos_unactive")
+        fabConfig.buttonImage = UIImage(named: "sos_active")
         fabConfig.buttonBackgroundColor = UIColor.clear // only show icon .png, if orange the bounding will be circle, use with icon without circle
         
         fab = MIFab(

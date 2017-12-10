@@ -21,16 +21,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7i-BV-5Ep">
-                                <rect key="frame" x="66" y="438" width="81" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="car"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7i-BV-5Ep">
+                                <rect key="frame" x="115" y="468" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="V7J-EG-N3e"/>
+                                    <constraint firstAttribute="height" constant="90" id="zEU-a7-4ID"/>
+                                </constraints>
+                                <state key="normal" image="car"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7S-nY-p87">
+                                <rect key="frame" x="10" y="485.5" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="55" id="Mi6-bV-JVG"/>
+                                    <constraint firstAttribute="height" priority="999" constant="55" id="wU8-r1-AQU"/>
+                                </constraints>
+                                <state key="normal" image="sos_unactive"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="u7i-BV-5Ep" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="5K1-kQ-vgl"/>
+                            <constraint firstItem="x7S-nY-p87" firstAttribute="centerY" secondItem="u7i-BV-5Ep" secondAttribute="centerY" id="Szw-h9-XXd"/>
+                            <constraint firstItem="x7S-nY-p87" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="ma9-jV-a32"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="u7i-BV-5Ep" secondAttribute="bottom" constant="10" id="zJj-f2-aTg"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="btnCar" destination="u7i-BV-5Ep" id="ZUy-49-E32"/>
+                        <outlet property="btnGPS" destination="x7S-nY-p87" id="Tov-aI-vdq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -40,5 +58,6 @@
     </scenes>
     <resources>
         <image name="car" width="193" height="194"/>
+        <image name="sos_unactive" width="123" height="124"/>
     </resources>
 </document>

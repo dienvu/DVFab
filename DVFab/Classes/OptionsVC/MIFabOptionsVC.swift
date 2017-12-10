@@ -30,6 +30,7 @@ class MIFabOptionsVC: UIViewController {
         
     }
     
+    // Get Instance
     static func get(manager: MIFab) -> MIFabOptionsVC {
         
         let fabOptionVC = MIFabOptionsVC(nibName: "MIFabOptionsVC", bundle: Bundle(for: MIFabOptionsVC.self))
