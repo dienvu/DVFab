@@ -30,18 +30,21 @@ class ViewController: UIViewController {
     fileprivate func setupFab() {
         var fabConfig = MIFab.Config() // Config for Fab & Sub-Item
         
-        fabConfig.buttonPadding = CGSize(width: 200, height: 50)
-        //fabConfig.buttonSize = btnCar.frame.size.width
+        //fabConfig.buttonPadding = CGSize(width: 10, height: 10)
+        //fabConfig.buttonSize = btnGPS.frame.size.width
+        
         fabConfig.buttonIconPadding = 0
         
-        //fabConfig.buttonConstraints = ["V:[fab(==btnGPS)]": [], "H:[btnGPS]-(>=0)-[fab(==btnGPS)]-10-|": .alignAllCenterY]
+        fabConfig.buttonConstraints = ["V:[fab(==btnGPS)]": [], "H:[btnGPS]-(>=0)-[fab(==btnGPS)]-10-|": .alignAllCenterY] // Constraints Formula, default for this button is fab
+        fabConfig.buttonConstraintViews = ["btnGPS": btnGPS] // Views Dictionary for buttonConstraints, default fab can be ignored.
+        
         //fabConfig.buttonConstraints = ["V:[fab(==55)]-200-|": [], "H:[fab(==btnGPS)]-100-|": []]
         //fabConfig.buttonConstraintViews = ["btnGPS": btnGPS]
         
         //fabConfig.buttonConstraintTo = btnCar
         
         fabConfig.buttonImage = UIImage(named: "sos_active")
-        fabConfig.buttonBackgroundColor = UIColor.clear // only show icon .png, if orange the bounding will be circle, use with icon without circle
+        fabConfig.buttonBackgroundColor = UIColor.orange // only show icon .png, if orange the bounding will be circle, use with icon without circle
         
         fab = MIFab(
             parentVC: self,
@@ -50,7 +53,7 @@ class ViewController: UIViewController {
                 MIFabOption(
                     title: "Kích Bình",
                     image: UIImage(named: "sos_kichbinh"),
-                    backgroundColor: UIColor.clear, // only show icon.png (clear background)
+                    backgroundColor: UIColor.orange, // only show icon.png (clear background)
                     tintColor: UIColor.white,
                     actionClosure: {
                         
@@ -62,7 +65,7 @@ class ViewController: UIViewController {
                 MIFabOption(
                     title: "Cứu Hộ",
                     image: UIImage(named: "sos_cuuho"),
-                    backgroundColor: UIColor.clear,
+                    backgroundColor: UIColor.orange,
                     tintColor: UIColor.white,
                     actionClosure: {
                         
@@ -84,4 +87,3 @@ class ViewController: UIViewController {
     }
 
 }
-

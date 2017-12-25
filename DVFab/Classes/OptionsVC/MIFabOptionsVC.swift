@@ -47,6 +47,8 @@ class MIFabOptionsVC: UIViewController {
         
         fabOptionVC.view.layoutIfNeeded()
         
+        print(manager.config)
+        
         return fabOptionVC
         
     }
@@ -59,7 +61,7 @@ class MIFabOptionsVC: UIViewController {
         
     }
     fileprivate func setupTableView() {
-        
+        // Option Table View
         tableView.register(MIFabOptionCell.cellNib, forCellReuseIdentifier: MIFabOptionCell.cellIdentifier)
         
         tableViewHeightConstraint.constant = fabManager.config.optionHeight * CGFloat(fabManager.fabOptions?.count ?? 0)
@@ -67,6 +69,10 @@ class MIFabOptionsVC: UIViewController {
         
         tableViewRightConstraint.constant = fabManager.config.buttonPadding.width + (fabManager.config.buttonSize - fabManager.config.optionIconSize)/2
         tableViewBottomConstraint.constant = fabManager.config.buttonPadding.height + fabManager.config.buttonSize + fabManager.config.spaceBetweenButtonAndOptions
+        
+        
+        print(tableViewRightConstraint.constant)
+        print(tableViewBottomConstraint.constant)
         
     }
     

@@ -109,16 +109,17 @@ public class MIFab {
         // Dien : Calculate Padding (for Option Table) from Constraint
         if self.config.buttonConstraints != nil {
             if let fabSuperView = fabButton.superview {
-            self.config.buttonPadding = CGSize(width: fabSuperView.frame.width - fabButton.frame.maxX, height: fabSuperView.frame.height - fabButton.frame.maxY) //(fabButton.frame.maxY, fabButton.frame.maxX  )
-                
+                fabSuperView.layoutIfNeeded()
+                self.config.buttonPadding = CGSize(width: fabSuperView.frame.width - fabButton.frame.maxX, height: fabSuperView.frame.height - fabButton.frame.maxY) // fabButton.frame.maxY, fabButton.frame.maxX
+                self.config.buttonSize = fabButton.frame.width
             }
         }
         
-        
+        //self.config.buttonPadding = CGSize(width: 0, height: 0)
         self.fabOptionsVC = MIFabOptionsVC.get(manager: self)
         
        
-        
+        			
         hideButton()
         
     }
@@ -135,6 +136,7 @@ public class MIFab {
         }
         
     }
+    
     public func hideButton(animated: Bool = false) {
         
         UIView.animate(withDuration: animated ? 0.2 : 0) {
@@ -143,7 +145,6 @@ public class MIFab {
             self.fabButton.frame.origin = CGPoint(x: self.fabButton.frame.origin.x, y: UIScreen.main.bounds.height + self.config.buttonSize)
             
         }
-        
     }
     
     public func showFabOptions(animated: Bool = false) {

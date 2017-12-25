@@ -690,8 +690,8 @@
 		645E0DDFB5B86ED6A615D48F318B931F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				35336B8F538D0811CE28B67D5A65E11D /* MIFabOptionCell.swift */,
 				531AFA12A05EE8A67EC074388BF5C400 /* MIFabOptionCell.xib */,
+				35336B8F538D0811CE28B67D5A65E11D /* MIFabOptionCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
