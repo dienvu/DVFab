@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DVFab'
-  s.version          = '1.2'
+  s.version          = '1.4'
   s.summary          = 'A Floating Button.'
 
 # This description is used to generate tags and improve search results.
