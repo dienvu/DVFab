@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         //fabConfig.buttonSize = btnGPS.frame.size.width
         
         fabConfig.buttonIconPadding = 0
+        //fabConfig.optionIconSize = 55
         
         fabConfig.buttonConstraints = ["V:[fab(==btnGPS)]": [], "H:[btnGPS]-(>=0)-[fab(==btnGPS)]-10-|": .alignAllCenterY] // Constraints Formula, default for this button is fab
         fabConfig.buttonConstraintViews = ["btnGPS": btnGPS] // Views Dictionary for buttonConstraints, default fab can be ignored.
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
         //fabConfig.buttonConstraintTo = btnCar
         
         fabConfig.buttonImage = UIImage(named: "sos_active")
-        fabConfig.buttonBackgroundColor = UIColor.orange // only show icon .png, if orange the bounding will be circle, use with icon without circle
+        fabConfig.buttonBackgroundColor = UIColor.clear // only show icon .png, if orange the bounding will be circle, use with icon without circle
         
         fab = MIFab(
             parentVC: self,
@@ -53,7 +54,7 @@ class ViewController: UIViewController {
                 MIFabOption(
                     title: "Kích Bình",
                     image: UIImage(named: "sos_kichbinh"),
-                    backgroundColor: UIColor.orange, // only show icon.png (clear background)
+                    backgroundColor: UIColor.clear, // only show icon.png (clear background)
                     tintColor: UIColor.white,
                     actionClosure: {
                         
@@ -65,7 +66,7 @@ class ViewController: UIViewController {
                 MIFabOption(
                     title: "Cứu Hộ",
                     image: UIImage(named: "sos_cuuho"),
-                    backgroundColor: UIColor.orange,
+                    backgroundColor: UIColor.clear,
                     tintColor: UIColor.white,
                     actionClosure: {
                         

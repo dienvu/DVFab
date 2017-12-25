@@ -28,6 +28,8 @@ class MIFabOptionCell: UITableViewCell {
     @IBOutlet weak var titleLabelLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleLabelRightConstraint: NSLayoutConstraint!
     
+    weak var bgColor: UIColor!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -38,17 +40,19 @@ class MIFabOptionCell: UITableViewCell {
         super.setHighlighted(highlighted, animated: animated)
         
         if highlighted {
-            iconContainerView.backgroundColor = UIColor.orange.withAlphaComponent(0.9)
+            iconContainerView.backgroundColor = bgColor.withAlphaComponent(0.5)//UIColor.orange.withAlphaComponent(0.5)
         } else {
-            iconContainerView.backgroundColor = UIColor.orange
+            iconContainerView.backgroundColor = bgColor//UIColor.orange
         }
         
     }
-
+    
     func configure(fabOption: MIFabOption, config: MIFab.Config) {
         
         titleLabel.text = fabOption.title
         iconImageView.image = fabOption.image
+        bgColor = fabOption.backgroundColor
+        // iconImageView.backgroundColor = bgColor = fabOption.backgroundColor
         iconImageView.tintColor = fabOption.tintColor
         
         iconContainerViewWidth.constant = config.optionIconSize

@@ -47,7 +47,7 @@ class MIFabOptionsVC: UIViewController {
         
         fabOptionVC.view.layoutIfNeeded()
         
-        print(manager.config)
+        //print(manager.config)
         
         return fabOptionVC
         
@@ -71,8 +71,8 @@ class MIFabOptionsVC: UIViewController {
         tableViewBottomConstraint.constant = fabManager.config.buttonPadding.height + fabManager.config.buttonSize + fabManager.config.spaceBetweenButtonAndOptions
         
         
-        print(tableViewRightConstraint.constant)
-        print(tableViewBottomConstraint.constant)
+        //print(tableViewRightConstraint.constant)
+        //print(tableViewBottomConstraint.constant)
         
     }
     

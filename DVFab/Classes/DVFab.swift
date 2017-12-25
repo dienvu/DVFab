@@ -109,7 +109,7 @@ public class MIFab {
         // Dien : Calculate Padding (for Option Table) from Constraint
         if self.config.buttonConstraints != nil {
             if let fabSuperView = fabButton.superview {
-                fabSuperView.layoutIfNeeded()
+                fabSuperView.layoutIfNeeded() // Force update all Dimension of Layout first to get their dimension correctly
                 self.config.buttonPadding = CGSize(width: fabSuperView.frame.width - fabButton.frame.maxX, height: fabSuperView.frame.height - fabButton.frame.maxY) // fabButton.frame.maxY, fabButton.frame.maxX
                 self.config.buttonSize = fabButton.frame.width
             }
@@ -117,9 +117,7 @@ public class MIFab {
         
         //self.config.buttonPadding = CGSize(width: 0, height: 0)
         self.fabOptionsVC = MIFabOptionsVC.get(manager: self)
-        
        
-        			
         hideButton()
         
     }
@@ -239,20 +237,6 @@ public class MIFab {
         
         fabButton.button.contentEdgeInsets = UIEdgeInsets.init(top: config.buttonIconPadding, left: config.buttonIconPadding, bottom: config.buttonIconPadding, right: config.buttonIconPadding) // Icon Padding inside Button
         
-        /*NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: fabButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: config.buttonSize),
-            NSLayoutConstraint(item: fabButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: config.buttonSize),
-            
-            NSLayoutConstraint(item: fabButtonSuperView, attribute: .bottom, relatedBy: .equal, toItem: fabButton, attribute: .bottom, multiplier: 1, constant: config.buttonPadding.height),
-            NSLayoutConstraint(item: fabButtonSuperView, attribute: .trailing, relatedBy: .equal, toItem: fabButton, attribute: .trailing, multiplier: 1, constant: config.buttonPadding.width)
-            ])*/
-        /*NSLayoutConstraint.activate([ // Use Constraint Default
-            fabButton.widthAnchor.constraint(equalToConstant: config.buttonSize),
-            fabButton.heightAnchor.constraint(equalToConstant: config.buttonSize),
-            
-            fabButton.bottomAnchor.constraint(equalTo: fabButtonSuperView.bottomAnchor, constant: -config.buttonPadding.height),
-            fabButton.trailingAnchor.constraint(equalTo: fabButtonSuperView.trailingAnchor, constant: -config.buttonPadding.width)
-        ])*/
         if config.buttonConstraints != nil {
             // Use Constraint from outside setup in Config
             
